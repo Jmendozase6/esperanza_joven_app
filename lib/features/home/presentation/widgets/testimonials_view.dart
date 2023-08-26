@@ -11,14 +11,17 @@ class TestimonialsView extends StatelessWidget {
   Widget build(BuildContext context) {
     final testimonyProvider = context.watch<TestimonyProvider>();
 
-    return testimonyProvider.isLoading
-        ? const LoadingView()
-        : SingleChildScrollView(
-            child: Column(
-              children: [
-                const TestimonyForm(),
-                const Divider(),
-                SizedBox(
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const TestimonyForm(),
+          const Divider(),
+          testimonyProvider.isLoading
+              ? SizedBox(
+                  height: 0.7.sh,
+                  child: const LoadingView(),
+                )
+              : SizedBox(
                   height: 0.7.sh,
                   child: ListView.separated(
                     itemCount: testimonyProvider.testimonials.length,
@@ -27,7 +30,7 @@ class TestimonialsView extends StatelessWidget {
                       return ListTile(
                         leading: CircleAvatar(
                           child: Text(
-                            test.author.substring(0, 2),
+                            test.author.substring(0, 1),
                           ),
                         ),
                         title: Text('Autor: ${test.author}'),
@@ -37,9 +40,9 @@ class TestimonialsView extends StatelessWidget {
                     separatorBuilder: (_, __) => const Divider(),
                   ),
                 ),
-              ],
-            ),
-          );
+        ],
+      ),
+    );
   }
 }
 
@@ -52,40 +55,45 @@ class TestimonyForm extends StatelessWidget {
   Widget build(BuildContext context) {
     final testimonyProvider = context.watch<TestimonyProvider>();
 
-    return SizedBox(
-      height: 0.2.sh,
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10.w),
-        child: Column(
-          children: [
-            SizedBox(height: 10.h),
-            TextFormField(
-              controller: testimonyProvider.author,
-              maxLength: 20,
-              decoration: const InputDecoration.collapsed(
-                hintText: 'Nombres, si queda vacío se publicará cómo anónimo',
+    return testimonyProvider.isSending
+        ? SizedBox(
+            height: 0.2.sh,
+            child: const LoadingView(),
+          )
+        : SizedBox(
+            height: 0.2.sh,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.w),
+              child: Column(
+                children: [
+                  SizedBox(height: 10.h),
+                  TextFormField(
+                    controller: testimonyProvider.author,
+                    maxLength: 20,
+                    decoration: const InputDecoration.collapsed(
+                      hintText: 'Nombres, pór defecto Anónimo',
+                    ),
+                  ),
+                  TextFormField(
+                    controller: testimonyProvider.content,
+                    maxLength: 400,
+                    keyboardType: TextInputType.multiline,
+                    maxLines: 2,
+                    decoration: const InputDecoration.collapsed(
+                      hintText: 'Tú testimonio',
+                    ),
+                  ),
+                  const Spacer(),
+                  SizedBox(
+                    width: 0.8.sw,
+                    child: FilledButton.tonal(
+                      onPressed: () => testimonyProvider.makeTestimony(),
+                      child: const Text('Enviar'),
+                    ),
+                  ),
+                ],
               ),
             ),
-            TextFormField(
-              controller: testimonyProvider.content,
-              maxLength: 400,
-              keyboardType: TextInputType.multiline,
-              maxLines: 2,
-              decoration: const InputDecoration.collapsed(
-                hintText: 'Tu testimonio',
-              ),
-            ),
-            const Spacer(),
-            SizedBox(
-              width: 0.8.sw,
-              child: FilledButton.tonal(
-                onPressed: () => testimonyProvider.makeTestimony(),
-                child: const Text('Enviar'),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+          );
   }
 }

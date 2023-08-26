@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
+import 'package:go_router/go_router.dart';
 import 'package:young_pregnant_app/config/constants/app_constants.dart';
 import 'package:young_pregnant_app/config/theme/app_colors.dart';
 import 'package:young_pregnant_app/utils/utils.dart';
@@ -42,7 +43,8 @@ class TitleSection extends StatelessWidget {
                   color: colors.onBackground,
                 ),
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () =>
+                      context.pushNamed(AppRoutes.testimonials.routeName),
                   icon: Icon(
                     TablerIcons.send,
                     color: colors.background,

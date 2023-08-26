@@ -36,14 +36,24 @@ class TestimonyProvider extends ChangeNotifier {
   }
 
   Future<void> makeTestimony() async {
-    if (author.text.isEmpty || content.text.isEmpty) return;
+    if (author.text.trim().isEmpty || content.text.trim().isEmpty) return;
     isSending = true;
-    final response = await datasource.makeTestimony(
+    await datasource.makeTestimony(
       author.text,
       content.text,
       true,
     );
+    testimonials.insert(
+      0,
+      Testimony(
+        id: 0,
+        createdAt: DateTime(2023),
+        author: author.text,
+        content: content.text,
+      ),
+    );
+    author.clear();
+    content.clear();
     isSending = false;
-    print(response);
   }
 }

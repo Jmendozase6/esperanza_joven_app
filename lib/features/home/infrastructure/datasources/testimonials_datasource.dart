@@ -6,7 +6,10 @@ class TestimonialDatasource {
 
   Future<List<Testimony>> getTestimonials() async {
     final testimonials = <Testimony>[];
-    final response = await supabase.from('Testimony').select();
+    final response = await supabase
+        .from('Testimony')
+        .select()
+        .order('created_at', ascending: false);
 
     for (var testimony in response) {
       final test = Testimony.fromJson(testimony);
@@ -16,16 +19,14 @@ class TestimonialDatasource {
     return testimonials;
   }
 
-  Future<bool> makeTestimony(
+  Future<void> makeTestimony(
     String author,
     String content,
     bool isApproved,
   ) async {
-    final response = await supabase.from('Testimony').insert({
+    await supabase.from('Testimony').insert({
       'author': author,
       'content': content,
     });
-
-    return response;
   }
 }
