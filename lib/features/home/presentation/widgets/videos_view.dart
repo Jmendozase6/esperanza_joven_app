@@ -23,104 +23,115 @@ class VideosView extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 5.w),
+          padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 15.w),
           child: Column(
             children: [
-              ListTile(
-                title: Text(
-                  'Estudio Las consecuencias socioeconómicas del embarazo y la maternidad adolescente en Perú.',
-                  style: TextStylesUtils.normalStyle(),
-                ),
-                trailing: IconButton(
-                  onPressed: () => context.pushNamed(
-                    AppRoutes.videoDetails.routeName,
-                    queryParameters: {
-                      'id': 'h_0iLSqs2a4',
-                    },
+              Card(
+                child: ListTile(
+                  title: Text(
+                    'Estudio Las consecuencias socioeconómicas del embarazo y la maternidad adolescente en Perú.',
+                    style: TextStylesUtils.normalStyle(),
                   ),
-                  icon: const Icon(TablerIcons.arrow_right),
+                  trailing: IconButton(
+                    onPressed: () => context.pushNamed(
+                      AppRoutes.videoDetails.routeName,
+                      queryParameters: {
+                        'id': 'h_0iLSqs2a4',
+                      },
+                    ),
+                    icon: const Icon(TablerIcons.arrow_right),
+                  ),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 0.2.sw),
                 child: const Divider(),
               ),
-              ListTile(
-                title: Text(
-                  'Mamás a los quince años: Los embarazos adolescentes en la selva del Perú | #VideosEC',
-                  style: TextStylesUtils.normalStyle(),
-                ),
-                trailing: IconButton(
-                  onPressed: () => context.pushNamed(
-                    AppRoutes.videoDetails.routeName,
-                    queryParameters: {
-                      'id': 'rBEerynzD8Y',
-                    },
+              Card(
+                child: ListTile(
+                  title: Text(
+                    'Mamás a los quince años: Los embarazos adolescentes en la selva del Perú | #VideosEC',
+                    style: TextStylesUtils.normalStyle(),
                   ),
-                  icon: const Icon(TablerIcons.arrow_right),
+                  trailing: IconButton(
+                    onPressed: () => context.pushNamed(
+                      AppRoutes.videoDetails.routeName,
+                      queryParameters: {
+                        'id': 'rBEerynzD8Y',
+                      },
+                    ),
+                    icon: const Icon(TablerIcons.arrow_right),
+                  ),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 0.2.sw),
                 child: const Divider(),
               ),
-              ListTile(
-                title: Text(
-                  'Los riesgos y cómo combatir el embarazo adolescente en las regiones del Perú',
-                  style: TextStylesUtils.normalStyle(),
-                ),
-                trailing: IconButton(
-                  onPressed: () => context.pushNamed(
-                    AppRoutes.videoDetails.routeName,
-                    queryParameters: {
-                      'id': 'ISEFgKKJO2A',
-                    },
+              Card(
+                child: ListTile(
+                  title: Text(
+                    'Los riesgos y cómo combatir el embarazo adolescente en las regiones del Perú',
+                    style: TextStylesUtils.normalStyle(),
                   ),
-                  icon: const Icon(TablerIcons.arrow_right),
+                  trailing: IconButton(
+                    onPressed: () => context.pushNamed(
+                      AppRoutes.videoDetails.routeName,
+                      queryParameters: {
+                        'id': 'ISEFgKKJO2A',
+                      },
+                    ),
+                    icon: const Icon(TablerIcons.arrow_right),
+                  ),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 0.2.sw),
                 child: const Divider(),
               ),
-              ListTile(
-                title: Text(
-                  'PREVENCIÓN DEL EMBARAZO ADOLESCENTE',
-                  style: TextStylesUtils.normalStyle(),
-                ),
-                trailing: IconButton(
-                  onPressed: () => context.pushNamed(
-                    AppRoutes.videoDetails.routeName,
-                    queryParameters: {
-                      'id': 'p8sZnz6ZC3s',
-                    },
+              Card(
+                child: ListTile(
+                  title: Text(
+                    'PREVENCIÓN DEL EMBARAZO ADOLESCENTE',
+                    style: TextStylesUtils.normalStyle(),
                   ),
-                  icon: const Icon(TablerIcons.arrow_right),
+                  trailing: IconButton(
+                    onPressed: () => context.pushNamed(
+                      AppRoutes.videoDetails.routeName,
+                      queryParameters: {
+                        'id': 'p8sZnz6ZC3s',
+                      },
+                    ),
+                    icon: const Icon(TablerIcons.arrow_right),
+                  ),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 0.2.sw),
                 child: const Divider(),
               ),
-              ListTile(
-                title: Text(
-                  'Embarazo adolescente en el Perú - UNMSM',
-                  style: TextStylesUtils.normalStyle(),
-                ),
-                trailing: IconButton(
-                  onPressed: () => context.pushNamed(
-                    AppRoutes.videoDetails.routeName,
-                    queryParameters: {
-                      'id': 'fW5UWdPcneg',
-                    },
+              Card(
+                child: ListTile(
+                  title: Text(
+                    'Embarazo adolescente en el Perú - UNMSM',
+                    style: TextStylesUtils.normalStyle(),
                   ),
-                  icon: const Icon(TablerIcons.arrow_right),
+                  trailing: IconButton(
+                    onPressed: () => context.pushNamed(
+                      AppRoutes.videoDetails.routeName,
+                      queryParameters: {
+                        'id': 'fW5UWdPcneg',
+                      },
+                    ),
+                    icon: const Icon(TablerIcons.arrow_right),
+                  ),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 0.2.sw),
                 child: const Divider(),
               ),
+              SizedBox(height: 10.h),
               Image.asset(
                 AppImages.aboutUs,
                 height: 0.3.sh,

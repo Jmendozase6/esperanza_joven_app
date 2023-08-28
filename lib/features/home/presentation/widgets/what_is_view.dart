@@ -9,19 +9,11 @@ class WhatIsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: EdgeInsets.symmetric(horizontal: 15.w),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                '¿Qué es el embarazo adolescente?',
-                style: TextStylesUtils.titleStyle(),
-              ),
-            ),
-            SizedBox(height: 10.h),
             ...[
               "- Conceptos",
               "- Causas",
@@ -29,11 +21,9 @@ class WhatIsView extends StatelessWidget {
             ].map(
               (item) => Align(
                 alignment: Alignment.centerLeft,
-                child: Chip(
-                  label: Text(
-                    item,
-                    style: TextStylesUtils.titleItalicStyle(),
-                  ),
+                child: Text(
+                  item,
+                  style: TextStylesUtils.titleItalicStyle(),
                 ),
               ),
             ),

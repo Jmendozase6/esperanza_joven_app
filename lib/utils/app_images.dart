@@ -15,8 +15,17 @@ class AppImages {
   static const String pregnancy04 = 'assets/images/pregnancy_04.png';
 
   static const String method01 = 'assets/images/method_01.png';
-  static const String method02 = 'assets/images/method_02.png';
+  static const String method02 = 'assets/images/methsod_02.png';
   static const String method03 = 'assets/images/method_03.png';
   static const String method04 = 'assets/images/method_04.png';
   static const String method05 = 'assets/images/method_05.png';
+
+  static const String doctor = 'assets/images/doctor.png';
+  static const String nurse = 'assets/images/nurse.png';
+
+  static const String posta = 'assets/images/posta.png';
+  static const String hospital = 'assets/images/hospital.png';
+
+  static const String phone = 'assets/images/phone.png';
+  static const String calendar = 'assets/images/calendar.png';
 }

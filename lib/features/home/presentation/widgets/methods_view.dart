@@ -9,25 +9,17 @@ class MethodsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: EdgeInsets.symmetric(horizontal: 15.w),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Chip(
-                label: Text(
-                  'Métodos anticonceptivos',
-                  style: TextStylesUtils.titleStyle(),
-                ),
-              ),
-            ),
             SizedBox(height: 10.h),
             ...[
-              "• Conceptos",
-              "• Causas",
-              "• Consecuencias",
+              "• Requisitos para obtenerlos",
+              "• ¿Dónde encontrarlos?",
+              "• ¿Cómo obtenerlos?",
+              "• Funciones",
             ].map(
               (item) => Align(
                 alignment: Alignment.centerLeft,

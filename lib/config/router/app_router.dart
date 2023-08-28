@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:young_pregnant_app/features/about_us/presentation/screens/about_us_screen.dart';
-import 'package:young_pregnant_app/features/contact/presentation/screens/contact_screen.dart';
 
 import 'package:young_pregnant_app/features/home/presentation/screens/screens.dart';
 import 'package:young_pregnant_app/features/home/presentation/widgets/videos_view.dart';
@@ -68,6 +67,16 @@ class AppRouter {
           child: const TestimonialsScreen(),
         ),
       ),
+      GoRoute(
+        path: AppRoutes.connection.routePath,
+        name: AppRoutes.connection.routeName,
+        parentNavigatorKey: _rootNavigatorKey,
+        pageBuilder: (context, state) => buildPageWithDefaultTransition(
+          context: context,
+          state: state,
+          child: const ConnectionScreen(),
+        ),
+      ),
       ShellRoute(
         navigatorKey: _shellNavigatorKey,
         // parentNavigatorKey: _rootNavigatorKey,
@@ -97,16 +106,16 @@ class AppRouter {
               child: const AboutUsScreen(),
             ),
           ),
-          GoRoute(
-            path: AppRoutes.contact.routePath,
-            name: AppRoutes.contact.routeName,
-            parentNavigatorKey: _shellNavigatorKey,
-            pageBuilder: (context, state) => buildPageWithDefaultTransition(
-              context: context,
-              state: state,
-              child: const ContactScreen(),
-            ),
-          ),
+          // GoRoute(
+          //   path: AppRoutes.contact.routePath,
+          //   name: AppRoutes.contact.routeName,
+          //   parentNavigatorKey: _shellNavigatorKey,
+          //   pageBuilder: (context, state) => buildPageWithDefaultTransition(
+          //     context: context,
+          //     state: state,
+          //     child: const ContactScreen(),
+          //   ),
+          // ),
         ],
       ),
     ],

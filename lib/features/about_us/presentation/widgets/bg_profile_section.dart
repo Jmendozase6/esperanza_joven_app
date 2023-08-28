@@ -8,7 +8,7 @@ class BgProfileSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 0.35.sh,
+      height: 0.3.sh,
       alignment: Alignment.center,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(

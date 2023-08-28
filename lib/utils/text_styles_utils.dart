@@ -17,4 +17,8 @@ class TextStylesUtils {
         color: color ?? AppColors.backgroundColor,
         fontSize: 13.sp,
       );
+  static TextStyle littleStyle({Color? color}) => TextStyle(
+        color: color ?? AppColors.backgroundColor,
+        fontSize: 12.sp,
+      );
 }

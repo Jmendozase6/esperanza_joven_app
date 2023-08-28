@@ -38,7 +38,7 @@ class LocalQuestionDatasource {
           "Números de profesionales",
           "Servicios de ayuda"
         ],
-        route: AppRoutes.home,
+        route: AppRoutes.connection,
       ),
       Question(
         id: 3,
@@ -61,7 +61,7 @@ class LocalQuestionDatasource {
           "Requisitos para obtenerlos",
           "¿Dónde encontrarlos?",
           "¿Cómo obtenerlos?",
-          "Funciones"
+          "Funciones",
         ],
         route: AppRoutes.methods,
       ),

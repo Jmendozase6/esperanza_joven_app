@@ -35,9 +35,9 @@ class CustomBottomNavBar extends StatelessWidget {
             context.goNamed(AppRoutes.aboutUs.routeName);
           }
 
-          if (bottomProvider.currentIndex == 2) {
-            context.goNamed(AppRoutes.contact.routeName);
-          }
+          // if (bottomProvider.currentIndex == 2) {
+          //   context.goNamed(AppRoutes.contact.routeName);
+          // }
         },
         items: [
           FlashyTabBarItem(
@@ -50,11 +50,11 @@ class CustomBottomNavBar extends StatelessWidget {
             title: const Text('Nosotros'),
             activeColor: AppColors.backgroundColor,
           ),
-          FlashyTabBarItem(
-            icon: const Icon(TablerIcons.address_book),
-            title: const Text('Contacto'),
-            activeColor: AppColors.backgroundColor,
-          ),
+          // FlashyTabBarItem(
+          //   icon: const Icon(TablerIcons.address_book),
+          //   title: const Text('Contacto'),
+          //   activeColor: AppColors.backgroundColor,
+          // ),
         ],
       ),
     );

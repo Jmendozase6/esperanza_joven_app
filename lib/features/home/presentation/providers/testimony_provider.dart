@@ -1,3 +1,4 @@
+import 'package:filter_profanity/filter_profanity.dart';
 import 'package:flutter/widgets.dart';
 import 'package:young_pregnant_app/features/home/domain/entities/testimony.dart';
 import 'package:young_pregnant_app/features/home/infrastructure/datasources/testimonials_datasource.dart';
@@ -36,7 +37,10 @@ class TestimonyProvider extends ChangeNotifier {
   }
 
   Future<void> makeTestimony() async {
-    if (author.text.trim().isEmpty || content.text.trim().isEmpty) return;
+    if (content.text.trim().isEmpty) return;
+    final profanity = hasProfanity(content.text);
+    if (profanity) return;
+
     isSending = true;
     await datasource.makeTestimony(
       author.text,
@@ -48,7 +52,7 @@ class TestimonyProvider extends ChangeNotifier {
       Testimony(
         id: 0,
         createdAt: DateTime(2023),
-        author: author.text,
+        author: author.text.isEmpty ? 'Anónimo' : author.text,
         content: content.text,
       ),
     );

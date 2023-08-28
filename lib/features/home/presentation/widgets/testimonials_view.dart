@@ -21,8 +21,9 @@ class TestimonialsView extends StatelessWidget {
                   height: 0.7.sh,
                   child: const LoadingView(),
                 )
-              : SizedBox(
+              : Container(
                   height: 0.7.sh,
+                  margin: EdgeInsets.only(bottom: 10.h),
                   child: ListView.separated(
                     itemCount: testimonyProvider.testimonials.length,
                     itemBuilder: (BuildContext context, int index) {
@@ -78,7 +79,6 @@ class TestimonyForm extends StatelessWidget {
                     controller: testimonyProvider.content,
                     maxLength: 400,
                     keyboardType: TextInputType.multiline,
-                    maxLines: 2,
                     decoration: const InputDecoration.collapsed(
                       hintText: 'Tú testimonio',
                     ),

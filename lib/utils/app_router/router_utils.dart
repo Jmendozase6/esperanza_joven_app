@@ -8,6 +8,7 @@ enum AppRoutes {
   videos,
   videoDetails,
   testimonials,
+  connection,
 }
 
 extension AppRoutesExtension on AppRoutes {
@@ -31,6 +32,8 @@ extension AppRoutesExtension on AppRoutes {
         return '/videoDetails';
       case AppRoutes.testimonials:
         return '/testimonials';
+      case AppRoutes.connection:
+        return '/connection';
     }
   }
 
@@ -54,6 +57,8 @@ extension AppRoutesExtension on AppRoutes {
         return 'videoDetails';
       case AppRoutes.testimonials:
         return 'testimonials';
+      case AppRoutes.connection:
+        return 'connection';
     }
   }
 }
